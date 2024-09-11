@@ -1,7 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="/style.css" />
     <link
       rel="stylesheet"
@@ -10,30 +16,35 @@
   </head>
   <body>
     <div class="container">
-      <h1>Weather App using NodeJS</h1>
-      <form action="/weather" method="get">
-        <input type="text" name="city" placeholder="Enter City Name" />
-        <button type="submit">Get Weather</button>
-      </form>
-  
-      <% if (error) { %>
+      <div class="weather-app">
+        <h1>Weather App</h1>
+        <form action="/weather" method="get">
+          <input
+            type="text"
+            name="city"
+            class="input-city"
+            placeholder="Enter City Name"
+          />
+          <button type="submit" class="btn">Get Weather</button>
+        </form>
+
+        <% if (error) { %>
         <p class="error"><%= error %></p>
-      <% } else if (weather) { %>
+        <% } else if (weather) { %>
         <div class="card">
-          <p>
-            <i class="fas fa-thermometer-half"></i>
-            <%=weather.main.temp%>&deg;F
-          </p>
-          <p>
-            <i class="fas fa-cloud"></i>
-            <%=weather.weather[0].main%>
-          </p>
-          <p>
-            <i class="fas fa-map-marker-alt"></i>
-            <%=weather.name%>, <%=weather.sys.country%>
-          </p>
+          <h2>Weather in <%=weather.name%>, <%=weather.sys.country%></h2>
+          <div class="weather-info">
+            <p>
+              <i class="fas fa-thermometer-half"></i>
+              <span class="temp"><%=weather.main.temp%>&deg;F</span>
+            </p>
+            <p>
+              <i class="fas fa-cloud"></i> <%=weather.weather[0].main%>
+            </p>
+          </div>
         </div>
-      <% } %>
+        <% } %>
+      </div>
     </div>
   </body>
 </html>
