@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 app.get("/weather", async (req, res) => {
   const city = req.query.city;
   const weatherAPIKey = process.env.weatherPASS;
-  const weatherAPIUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${weatherAPIKey}`;
+  const weatherAPIUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${weatherAPIKey}`;
 
   let weather = null;
   let error = null;
