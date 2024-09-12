@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" colour-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,6 +16,7 @@
   </head>
   <body
     style="background-image: url('<%= imageUrl %>'); background-size: cover; background-position: center;">
+    <button id="theme-toggle" class="theme-toggle fas fa-solid fa-sun fa-2x"></button>
     <div class="container">
       <div class="weather-app">
         <h1>Weather App</h1>
@@ -28,6 +29,29 @@
           />
           <button type="submit" class="btn">Get Weather</button>
         </form>
+
+        <script>
+          // Select the toggle button
+          const themeToggleBtn = document.getElementById('theme-toggle');
+        
+          // Load the user's theme preference from localStorage
+          const currentTheme = localStorage.getItem('theme');
+          if (currentTheme === 'dark') {
+            document.documentElement.classList.add('dark-theme');
+          }
+        
+          // Add event listener to the button
+          themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark-theme');
+        
+            // Save the user's preference to localStorage
+            if (document.documentElement.classList.contains('dark-theme')) {
+              localStorage.setItem('theme', 'dark');
+            } else {
+              localStorage.setItem('theme', 'light');
+            }
+          });
+        </script>
 
         <% if (error) { %>
         <p class="error"><%= error %></p>

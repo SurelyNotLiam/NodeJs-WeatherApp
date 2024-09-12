@@ -107,3 +107,36 @@ i {
     font-size: 1.5rem;
   }
 }
+
+/* Dark theme styles */
+.dark-theme body {
+  color: #fff;
+  background-color: #333;
+}
+
+/* Style the toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dark-theme .theme-toggle {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-theme .weather-app {
+  background-color: #363434;
+}
+
+.dark-theme h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #007acc;
+}
