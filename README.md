@@ -1,5 +1,5 @@
 # Weather App
-Where I can learn and keep track of its development, hopefully making it not so basic in the future.
+A beginners app where I can learn and keep track of its development, hopefully making it not so basic in the future.
 
 Todo:
 - [X] Functioning Weather App
