@@ -1,9 +1,10 @@
 const express = require("express");
 const axios = require("axios");
 const app = express();
+require('dotenv').config();
 
 // Unsplash API Key
-const unsplashAccessKey = 'ed1XSa0aBlSXpnN98KNzBuLa9zxq93pMjSe1R7x9V_4';
+const unsplashAccessKey = process.env.unsplashPASS;
 
 // Set the view engine to EJS
 app.set("view engine", "ejs");
@@ -18,8 +19,8 @@ app.get("/", (req, res) => {
 
 app.get("/weather", async (req, res) => {
   const city = req.query.city;
-  const apiKey = '1caccea81ba9dcccde637acc94b77c42';
-  const weatherAPIUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
+  const weatherAPIKey = process.env.weatherPASS;
+  const weatherAPIUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${weatherAPIKey}`;
 
   let weather = null;
   let error = null;
@@ -44,7 +45,6 @@ app.get("/weather", async (req, res) => {
   // Render the index template with weather data, error message, and image URL
   res.render("index", { weather, error, imageUrl });
 });
-
 
 // Start the server and listen on port
 const port = process.env.PORT || 3000;

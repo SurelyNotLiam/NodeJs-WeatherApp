@@ -915,6 +915,7 @@ node_modules/vary/index.js
 node_modules/vary/LICENSE
 node_modules/vary/package.json
 node_modules/vary/README.md
+.env
 node_modules/dotenv/CHANGELOG.md
 node_modules/dotenv/config.d.ts
 node_modules/dotenv/config.js
@@ -932,4 +933,3 @@ node_modules/send/node_modules/encodeurl/index.js
 node_modules/send/node_modules/encodeurl/LICENSE
 node_modules/send/node_modules/encodeurl/package.json
 node_modules/send/node_modules/encodeurl/README.md
-.env
