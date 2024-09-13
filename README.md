@@ -11,4 +11,4 @@ Todo:
 
 This is my journey into web development. It may look easy and poorly done, but it's more for my benefit than anyone else's. Everyone has to start somewhere, right?
 
-Note: This repository may contain old API keys. These have been revoked, and new ones have been created.
+Note: This repository may contain old API keys. These have been revoked, and new ones have been created that are now secret >_<
